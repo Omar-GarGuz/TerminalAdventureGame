@@ -136,6 +136,7 @@ def character_selection():
     choice = input("Enter the number of your choice: ")
     print_stats(stats(choice))
 
+# forest options
 def in_forest():
     print("U entered to the darker forest u have ever been.... \nAnd tons of eyes look at u like their pray.")
     print("But u can ignore then, Because dog that barks, puppy that doesn't bite.")
@@ -145,8 +146,113 @@ def in_forest():
     print("1. Fight as a giga chad")
     print("2. Jump to the river at ur left")
     print("3. Climb the spined tree and lose 2 agility because of the injuries")
-    choie = input()
+    choice = input()
+
     
+    while True:
+        if choice == "1":
+            fight_wolf()
+        elif choice == "2":
+            river()
+        elif choice == "3":
+            tree()
+        else:
+            print("Invalid choice. Please try again.")
+            choice = input()
+
+# fight with the wolf in the forest
+def fight_wolf():
+    print("U decided to fight the wolf")
+    print("The wolf is strong and fast, but u are determined to win.")
+    print("After a fierce battle moving around the Shadows Forest, u emerge victorious.")
+    print("U have defeated the wolf and can now continue ur journey through the forest.")
+    print("U have won 2 strength and lost 1 agility in the fight.")
+    stats[2] += 2
+    stats[3] -= 1
+    print(f"Actual stats: {stats[1 : -1]}")
+    print(decorative_lines)
+    print("U continue with ur journey and find the Ice King's castle in the middle of the forest.")
+    print("What u wanna do?")
+    print("1. Enter the castle")
+    print("2. Look for princess information in nearby village u saw while the fight")
+    choice = input()
+
+    while True:
+        if choice == "1":
+            castle()
+        elif choice == "2":
+            village()
+        else: 
+            print("Invalid choice. Please try again.")
+            choice = input()
+
+def river():
+    print("U jumped to the river and the wolf couldn't follow u")
+    print("But the river is full of crocosharks and u were eated by them and...")
+    print("GAME OVER")
+
+
+def village():
+    print("In the walking to the village u found a girl that tryed to rob ur gold")
+    print("But she was not good doing it and u catched her")
+    print("She said that she is poor and need the money to survive")
+    print("What u wanna do?")
+    print("1. Give her the money and let her go")
+    print("2. Take her to the village and give her food")
+    print("3. Kill her and take her stuff")
+    choice = input()
+
+    while True:
+        if choice == "1":
+            gave_money()
+        elif choice == "2":
+            gave_food()
+        elif choice == "3":
+            kill_girl()
+        else: 
+            print("Invalid choice. Please try again.")
+            choice = input()
+
+
+## village options
+def gave_money():
+    print("U gave her the money and let her go")
+
+
+def gave_food():
+    print("U gave her food and she is very grateful")
+
+
+def kill_girl():
+    print("U killed the girl but she was the Ice King's daughter before she died, she confessed:")
+    print("'My father spelled me that if I ever got killed, the whole world would explode'")
+    print("'Sorry, but I don't have election'")
+    print("GAME OVER")
+
+
+def castle():
+    print("hi")
+
+
+def tree():
+    print("U climbed the spined tree and lost 2 agility because of the injuries")
+    stats[3] -= 2
+    print(f"Actual stats: {stats[1 : -1]}")
+    print("U reached the top of the tree and saw a village in the distance")
+    print("U also find the Ice King's castle in the middle of the forest")
+    print("What u wanna do?")
+    print("1. Go to the village")
+    print("2. Go to the castle")
+    choice = input()
+
+    while True:
+        if choice == "1":
+            village()
+        elif choice == "2":
+            castle()
+        else: 
+            print("Invalid choice. Please try again.")
+            choice = input()
 
 
 def adventure_time():
@@ -160,14 +266,20 @@ def adventure_time():
     choice = input()
 
     ##forest
-    while choice not in ["1", "2"]:
-        print("Invalid choice. Please try again.")
-        choice = input()
+    while True:
         if choice == "1":
             in_forest()
-        elif choice == "2": 
+        elif choice == "2":
             print("U decided go to home and the whole life in the planet just fell down in pair of years.")
+            break
+        else: 
+            print("Invalid choice. Please try again.")
+            choice = input()
+
+
+
     
+
 
 
 
@@ -175,4 +287,3 @@ def adventure_time():
 decorative_lines = "-"*60
 character_selection()
 adventure_time()
-
