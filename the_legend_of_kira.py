@@ -370,11 +370,86 @@ def kill_warrior(with_daughter):
     else: print("U say: fuck u, u monster u r gonna die right now")
 
 
-    
+def castle():
+    print(decorative_lines)
+    print("You enter the Ice King's castle. The air is cold and the walls shimmer with frost.")
+    print("You hear distant footsteps and see shadows moving.")
+    print("What do you want to do?")
+    print("1. Explore the main hall")
+    print("2. Search for secret passages")
+    print("3. Call out for the Ice King")
 
+    while True:
+        choice = input()
+        if choice == "1":
+            print("You bravely walk into the main hall and find the Ice King waiting for you.")
+            ice_king_battle(False)
+            break
+        elif choice == "2":
+            print("You find a hidden passage that leads directly to the throne room!")
+            ice_king_battle(False)
+            break
+        elif choice == "3":
+            print("Your voice echoes through the castle. The Ice King appears, ready for battle.")
+            ice_king_battle(False)
+            break
+        else:
+            print("Invalid choice. Please try again.")
 
 def sneak_warrior(with_daughter):
     print(decorative_lines)
+    print("You sneak past the warrior, using the shadows and your agility.")
+    if with_daughter:
+        print("Your companion helps distract the guard, making it easier for you both.")
+    else:
+        print("You move quietly and avoid detection.")
+    print("You reach the throne room where the Ice King awaits.")
+    ice_king_battle(with_daughter)
+
+def ice_king_battle(with_daughter):
+    print(decorative_lines)
+    print("The Ice King stands before you, his power radiating through the room.")
+    if with_daughter:
+        print("Your companion stands by your side, ready to help.")
+        print("What do you want to do?")
+        print("1. Attack together")
+        print("2. Let your companion distract while you attack")
+    else:
+        print("You face the Ice King alone.")
+        print("What do you want to do?")
+        print("1. Attack head-on")
+        print("2. Try to outsmart him")
+
+    while True:
+        choice = input()
+        if with_daughter:
+            if choice == "1":
+                print("You and your companion combine your powers and defeat the Ice King!")
+                win_game()
+                break
+            elif choice == "2":
+                print("Your companion distracts the Ice King, giving you an opening to strike. You win!")
+                win_game()
+                break
+            else:
+                print("Invalid choice. Please try again.")
+        else:
+            if choice == "1":
+                print("You attack with all your strength and narrowly defeat the Ice King!")
+                win_game()
+                break
+            elif choice == "2":
+                print("You use your intelligence to trick the Ice King and win the battle!")
+                win_game()
+                break
+            else:
+                print("Invalid choice. Please try again.")
+
+def win_game():
+    print(decorative_lines)
+    print("Congratulations! You have defeated the Ice King and saved the world!")
+    print("The life tree seed is safe, and peace returns to the land.")
+    print("Thank you for playing 'The Legend of Kira'!")
 
 
 def kill_girl():
@@ -383,10 +458,6 @@ def kill_girl():
     print("'Sorry, but I don't have election'")
     print("GAME OVER")
     exit()
-
-
-def castle():
-    print("hi")
 
 
 def tree():
@@ -433,10 +504,9 @@ def adventure_time():
 
 
 
-    
-
 
 
 decorative_lines = "-"*60
 character_selection()
 adventure_time()
+
