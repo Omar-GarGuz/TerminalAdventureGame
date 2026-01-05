@@ -1,5 +1,5 @@
 # The first comment of the game the legend of Kira
-# Kira has to choose options to progress through the story and overcome challenges.
+# Kira has to choose options to progress through the story and overcome challenges
 
 # print the character brothers
 def skiraton():
